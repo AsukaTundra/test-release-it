@@ -1,0 +1,47 @@
+# Запускается при пуше (в т.ч. при мердже) в ветку release.
+# Определяет версию по conventional commits, поднимает её по semver,
+# обновляет package.json, CHANGELOG.md, создаёт тег и записывает версию в VERSION и .env.
+
+name: Release
+
+on:
+  push:
+    branches:
+      - release
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "lts/*"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Configure Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Run release-it
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: npx release-it --ci
+
+      - name: Create .env with APP_VERSION
+        run: |
+          echo "APP_VERSION=$(cat VERSION)" >> .env
+          echo "Created .env with APP_VERSION=$(cat VERSION)"
+        if: success()
