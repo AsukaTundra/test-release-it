@@ -1,0 +1,25 @@
+{
+  "$schema": "https://unpkg.com/release-it/schema/release-it.json",
+  "npm": {
+    "publish": false,
+    "skipChecks": true
+  },
+  "github": {
+    "release": false
+  },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "preset": "angular",
+      "infile": "CHANGELOG.md",
+      "ignoreRecommendedBump": false
+    }
+  },
+  "git": {
+    "addUntrackedFiles": true,
+    "commitMessage": "chore: release ${version}"
+  },
+  "hooks": {
+    "after:bump": "echo ${version} > VERSION",
+    "before:release": "git add VERSION"
+  }
+}
