@@ -1,5 +1,7 @@
 # Changelog
 
+## [1.1.1](https://github.com/AsukaTundra/test-release-it/compare/1.1.0...1.1.1) (2026-03-12)
+
 # 1.1.0 (2026-03-11)
 
 
