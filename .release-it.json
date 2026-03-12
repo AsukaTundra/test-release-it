@@ -11,7 +11,8 @@
     "@release-it/conventional-changelog": {
       "preset": {
         "name": "angular"
-      }
+      },
+      "strictSemVer": true
     }
   },
   "hooks": {
