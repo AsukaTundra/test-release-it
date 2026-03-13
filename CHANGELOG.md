@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.1.0](https://github.com/AsukaTundra/test-release-it/compare/4.0.0...4.1.0) (2026-03-13)
+
+### Features
+
+* изменить контракт API (breaking change) ([3b34959](https://github.com/AsukaTundra/test-release-it/commit/3b34959b58200f5822600a6ecd6a1d34cc5a2b76))
+
+### Bug Fixes
+
+* изменить контракт API (breaking change) ([b8473a3](https://github.com/AsukaTundra/test-release-it/commit/b8473a31566925e3f5768f87dc9f1a9a188814c9))
+
 ## [4.0.0](https://github.com/AsukaTundra/test-release-it/compare/3.0.0...4.0.0) (2026-03-13)
 
 ### ⚠ BREAKING CHANGES
