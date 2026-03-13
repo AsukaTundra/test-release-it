@@ -1,5 +1,21 @@
 # Changelog
 
+## [3.0.0](https://github.com/AsukaTundra/test-release-it/compare/1.1.0...3.0.0) (2026-03-13)
+
+### ⚠ BREAKING CHANGES
+
+* изменить контракт API (breaking change)
+* изменить контракт API (breaking change)
+* изменить контракт API (breaking change)
+
+### Features
+
+* **test-2:** work with ai ([08991fb](https://github.com/AsukaTundra/test-release-it/commit/08991fb59085310f78ce11e864b46f40ed5504e9))
+* **test-3:** work with ai ([ec74075](https://github.com/AsukaTundra/test-release-it/commit/ec7407524c2b70913f47d6d8f96e95f6dcc29861))
+* изменить контракт API (breaking change) ([cb1aa63](https://github.com/AsukaTundra/test-release-it/commit/cb1aa6361c43d76c0da165450cbe9bd92a37a8dc))
+* изменить контракт API (breaking change) ([4f048b9](https://github.com/AsukaTundra/test-release-it/commit/4f048b9eaa59399abe2dd5b0bc5581360623edc4))
+* изменить контракт API (breaking change) ([36abe87](https://github.com/AsukaTundra/test-release-it/commit/36abe87233a3a51c61f696aadb44d67bf2c8d7b3))
+
 ## [2.0.0](https://github.com/AsukaTundra/test-release-it/compare/1.2.1...2.0.0) (2026-03-12)
 
 ### ⚠ BREAKING CHANGES
