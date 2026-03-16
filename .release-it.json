@@ -7,6 +7,11 @@
   "github": {
     "release": false
   },
+  "plugins": {
+    "@release-it/conventional-changelog": {
+      "inline": false
+    }
+  },
   "hooks": {
     "after:bump": "echo ${version} > VERSION && node scripts/update-env-version.js ${version}",
     "before:release": "git add .env.example"
