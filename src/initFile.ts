@@ -2,6 +2,6 @@ const initFile: VoidFunction = () => {
   console.log("initFile");
 };
 
-//bebra 11
+//bebra 12
 
 export default initFile;
