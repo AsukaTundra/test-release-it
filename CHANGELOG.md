@@ -1,5 +1,12 @@
 # Changelog
 
+## [4.2.1](https://github.com/AsukaTundra/test-release-it/compare/4.2.0...4.2.1) (2026-03-16)
+
+### Bug Fixes
+
+* **test:** awdawd ([318d351](https://github.com/AsukaTundra/test-release-it/commit/318d3512b69e5dd4a60f4a06c6168986575342ff))
+* **test:** awdawd2 ([da744fb](https://github.com/AsukaTundra/test-release-it/commit/da744fb976a9807bd8add54c6ec1d888c04ff35d))
+
 ## [4.2.0](https://github.com/AsukaTundra/test-release-it/compare/4.1.0...4.2.0) (2026-03-16)
 
 ### Features
