@@ -1,24 +1,29 @@
-# Запускается при пуше (в т.ч. при мердже) в ветку release.
+# Запускается только при мердже PR в release, если заголовок PR начинается с update_release_ (например update_release_1.0).
 # Определяет версию по conventional commits, поднимает её по semver,
 # обновляет package.json, CHANGELOG.md, создаёт тег и записывает версию в VERSION и .env.
 
 name: Release
 
 on:
-  push:
+  pull_request:
     branches:
       - release
+    types:
+      - closed
 
 jobs:
   release:
     runs-on: ubuntu-latest
     permissions:
       contents: write
+    # Только если PR смержен и заголовок PR начинается с update_release_
+    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, 'update_release_')
 
     steps:
       - name: Checkout
         uses: actions/checkout@v4
         with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
           fetch-depth: 0
 
       - name: Setup Node.js
