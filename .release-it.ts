@@ -1,6 +1,6 @@
 import { Config } from "release-it";
 
-const config = {
+export default {
   npm: {
     publish: false,
     skipChecks: true,
