@@ -1,5 +1,15 @@
 # Changelog
 
+## [4.2.0](https://github.com/AsukaTundra/test-release-it/compare/4.1.0...4.2.0) (2026-03-16)
+
+### Features
+
+* **test:** 2.1.0 ([fef015a](https://github.com/AsukaTundra/test-release-it/commit/fef015ab9a7f7412f6c828642ca9c22a6c674840))
+* **test:** fix config ([ceab420](https://github.com/AsukaTundra/test-release-it/commit/ceab420a2a812cdbf1662e7a6d134d6c19d812b8))
+* **test:** json config ([0240a10](https://github.com/AsukaTundra/test-release-it/commit/0240a10fb214abacf748a0ac1715a4a6ff09df55))
+* **test:** test ([d7338c8](https://github.com/AsukaTundra/test-release-it/commit/d7338c84ebf8a346ef98eb42946fbbf9982191b3))
+* **test:** изменил конфиг ([ce4e139](https://github.com/AsukaTundra/test-release-it/commit/ce4e139ed47e45eeecebd2a51a8d3e1bbe5ea865))
+
 ## [4.1.0](https://github.com/AsukaTundra/test-release-it/compare/4.0.0...4.1.0) (2026-03-13)
 
 ### Features
