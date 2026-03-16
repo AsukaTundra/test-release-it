@@ -1,6 +1,5 @@
-# Запускается только при мердже PR в release, если заголовок PR начинается с update_release_ (например update_release_1.0).
-# Определяет версию по conventional commits, поднимает её по semver,
-# обновляет package.json, CHANGELOG.md, создаёт тег и записывает версию в VERSION и .env.
+# Запускается при мердже PR в release: update_release_* → minor, update_hotfix_* → patch.
+# Обновляет package.json, CHANGELOG.md, создаёт тег и записывает версию в VERSION и .env.
 
 name: Release
 
@@ -16,8 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-    # Только если PR смержен и заголовок PR начинается с update_release_
-    if: github.event.pull_request.merged == true && startsWith(github.event.pull_request.title, 'update_release_')
+    # Только если PR смержен и заголовок — update_release_* или update_hotfix_*
+    if: github.event.pull_request.merged == true && (startsWith(github.event.pull_request.title, 'update_release_') || startsWith(github.event.pull_request.title, 'update_hotfix_'))
 
     steps:
       - name: Checkout
@@ -40,10 +39,21 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
+      - name: Set release increment from PR title
+        run: |
+          PR_TITLE="${{ github.event.pull_request.title }}"
+          if [[ "$PR_TITLE" == update_release_* ]]; then
+            echo "RELEASE_INCREMENT=minor" >> $GITHUB_ENV
+          elif [[ "$PR_TITLE" == update_hotfix_* ]]; then
+            echo "RELEASE_INCREMENT=patch" >> $GITHUB_ENV
+          else
+            echo "RELEASE_INCREMENT=patch" >> $GITHUB_ENV
+          fi
+
       - name: Run release-it
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx release-it --ci
+        run: npx release-it --ci --increment=$RELEASE_INCREMENT
 
       - name: Create .env with APP_VERSION
         run: |
